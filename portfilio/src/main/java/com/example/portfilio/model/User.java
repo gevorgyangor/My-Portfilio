@@ -26,4 +26,6 @@ public class User {
     private String password;
     @Column
     private String phoneNumber;
+    @Column
+    private UserType type;
 }
