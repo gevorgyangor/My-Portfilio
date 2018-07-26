@@ -9,8 +9,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
@@ -20,9 +19,21 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String mainPage(ModelMap map) {
-
         return "index";
     }
+
+    @GetMapping(value = "/addUser")
+    public String register(ModelMap map) {
+        map.addAttribute("user", new User());
+        return "/register";
+    }
+
+    @PostMapping(value = "/addUser")
+    public String addUser(@ModelAttribute("user") User user) {
+        userRepository.save(user);
+        return "redirect:/register";
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(ModelMap map) {
         map.addAttribute("user", new User());

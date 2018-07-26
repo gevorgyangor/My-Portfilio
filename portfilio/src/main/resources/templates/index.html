@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -19,7 +19,7 @@
 <script src="jsfile.js"></script>
 <div class="d-flex flex-row-reverse bg-secondary">
 
-    <button type="submit" class="btn regular btn-primary mr-4 mt-2 mb-2" id="email" name="login">LOGIN</button>
+    <button action="#" th:action="@{/addUser}" type="submit" class="btn regular btn-primary mr-4 mt-2 mb-2" id="email" name="login">LOGIN</button>
     <button type="submit" class="btn regular btn-primary mr-4 mt-2 mb-2" id="pwd" name="register">REGISTER</button>
 </div>
 <div class=" header position-relative w-100">
