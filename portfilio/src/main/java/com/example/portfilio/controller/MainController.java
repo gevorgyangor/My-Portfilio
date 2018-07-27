@@ -17,8 +17,8 @@ public class MainController {
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String mainPage(ModelMap map) {
+    @GetMapping(value = "/")
+    public String mainPage() {
         return "index";
     }
 
@@ -34,13 +34,13 @@ public class MainController {
         return "redirect:/register";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @GetMapping(value = "/login")
     public String login(ModelMap map) {
         map.addAttribute("user", new User());
         return "login";
     }
 
-    @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
+    @PostMapping(value = "/loginUser")
     public String loginUser(@AuthenticationPrincipal UserDetails userDetails) {
         User user = ((CurrentUser) userDetails).getUser();
         if (user.getType() == UserType.USER) {
@@ -49,7 +49,7 @@ public class MainController {
         return "redirect:/admin";
     }
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @GetMapping(value = "/admin")
     public String admin(ModelMap map) {
 
         return "admin";

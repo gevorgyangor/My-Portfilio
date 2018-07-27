@@ -1,6 +1,5 @@
 package com.example.portfilio;
 
-import com.example.portfilio.model.User;
 import com.example.portfilio.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
