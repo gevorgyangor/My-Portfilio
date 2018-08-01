@@ -33,8 +33,7 @@ public class PortfilioApplication{
 //                    .build();
 //            userRepository.save(admin);
 //        }
-//    }
-
+//
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

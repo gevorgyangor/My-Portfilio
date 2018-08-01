@@ -1,34 +1,281 @@
-<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Gor Gevorgyan's portfolio"/>
     <meta name="author" content="Gor Gevorgyan "/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="../static/images/g.jpg" type="image/gif"/>
-    <link rel="stylesheet" type="text/css" href="../static/wow-animation/animate.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <title>Gor Gevorgyan's portfolio"</title>
+    <link rel="icon" href="images/g.jpg" type="image/gif"/>
+    <link rel="stylesheet" type="text/css" href="wow-animation/animate.min.css"/>
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <title>Gor Gevorgyan's portfolio </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body::-webkit-scrollbar {
+            width: 0.5em;
+            background-color: rgba(0, 0, 0, 0.71);
+        }
+
+        body::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgb(0, 0, 0);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: rgb(0, 0, 0);
+            outline: 1px solid #000000;
+        }
+
+        .header {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            min-height: 95vh;
+            background-image: url("images/linkedin_bw.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .web {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            min-height: 30vh;
+            background-image: url("images/linkedin_bw.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .footer {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            min-height: 10vh;
+            background-image: url("images/linkedin_bw.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .footertxt {
+            color: white;
+        }
+
+        .footertxt a {
+            color: #00cc00;
+        }
+
+        .footertxt a:hover {
+            color: black;
+            text-decoration: none;
+        }
+
+        .headerfilter {
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.41);
+        }
+
+        .footerfilter {
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.41);
+        }
+
+        .webfilter {
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.47);
+        }
+
+        .h {
+            height: 500px;
+        }
+
+        #fuul {
+            color: rgb(254, 254, 254);
+        }
+
+        .h1 {
+            font-size: 10vh;
+        }
+
+        #h5, #h52 {
+            margin-top: 0;
+            font-size: 3vh;
+        }
+
+        .h5 {
+            font-size: 7vh;
+        }
+
+        .portfolio, .aboutme {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.71);
+        }
+
+        .mypic {
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+
+        }
+
+        .a {
+            color: #00cc00;
+        }
+
+        .a:hover {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .templatestxt {
+            color: white;
+            font-size: 4vh;
+        }
+
+        .templatestxt2 {
+            color: white;
+            font-size: 2vh;
+        }
+
+        .img1:hover {
+            opacity: 0.5;
+            -ms-transform: scale(0.97); /* IE 9 */
+            -webkit-transform: scale(0.97); /* Safari 3-8 */
+            transform: scale(0.97);
+            transition: all 0.5s ease;
+        }
+
+        .business {
+
+            color: white;
+            font-size: 9vh;
+        }
+
+        .cvtxt {
+            font-size: 3vh;
+        }
+
+        .icon {
+            border: solid #ffffff;
+        }
+
+        .icon:hover {
+            background-color: #000000;
+            border: solid black;
+        }
+
+        .icon img:hover {
+            -ms-transform: scale(1.5); /* IE 9 */
+            -webkit-transform: scale(1.5); /* Safari 3-8 */
+            transform: scale(1.1);
+        }
+
+        .contackts li {
+            color: #00cc00;
+            font-size: 3vh;
+        }
+
+        .my {
+            /*color: #00cc00;*/
+            font-size: 3vh;
+        }
+
+        .bold {
+            font-family: Quicksand;
+        }
+
+        .regular {
+            font-family: sans-serif;
+        }
+
+        .pacifico {
+            font-family: Lobster;
+        }
+
+        @media (max-width: 1000px) {
+            .aboutme1 {
+                flex-direction: column;
+            }
+
+        }
+
+        @media (max-width: 767px) {
+            .myprojects {
+                flex-direction: column;
+            }
+
+            .footertxt, #h5, #h52, .h5, .business {
+                font-size: 2vh;
+            }
+
+            .h1 {
+                font-size: 7vh;
+            }
+
+            .mypic {
+                width: 300px;
+                height: 300px;
+            }
+
+            .header, .web, .footer {
+                background-attachment: scroll;
+            }
+
+        }
+
+        .titletxt {
+            /*font-size: 2vh;*/
+        }
+
+        .cvname::first-letter {
+            font-size: 200%;
+            color: #dbdbdb;
+
+        }
+
+        .education:hover {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .education {
+            color: #00cc00;
+        }
+
+    </style>
 </head>
 <body>
-<script src="jsfile.js"></script>
-<div class="d-flex flex-row-reverse bg-secondary">
+<div class="d-flex  flex-row-reverse bg-secondary">
+    <button th:type="submit" action="@{/login}" method="get" class="btn regular btn-primary mr-4 mt-2 mb-2" id="pwd" name="login" >
+        LOGIN
+    </button>
 
-    <button action="#" th:action="@{/addUser}" type="submit" class="btn regular btn-primary mr-4 mt-2 mb-2" id="email" name="login">LOGIN</button>
-    <button type="submit" class="btn regular btn-primary mr-4 mt-2 mb-2" id="pwd" name="register">REGISTER</button>
+    <button th:type="submit" action="@{/register}" method="post" class="btn regular btn-primary mr-4 mt-2 mb-2"
+            id="email"
+            name="register" >REGISTER
+    </button>
+
 </div>
 <div class=" header position-relative w-100">
     <div class="headerfilter position-absolute w-100 d-flex align-items-center">
 
         <div id="fuul" class="d-flex w-100 justify-content-center align-items-center flex-column">
 
-            <div id="h1" class="text-center"><h1 class="h1 wow fadeInLeftBig bold" data-wow-duration="1s">GOR <br>
-                GEVORGYAN</h1></div>
+            <div id="h1" class="text-center"><h1 class="h1 wow fadeInLeftBig bold" data-wow-duration="1s">GOR
+                GEVORGYAN</h1>
+            </div>
             <h5 id="h5" class="regular wow fadeInRightBig" data-wow-duration="1.5s">Back End Developer</h5>
             <h5 id="h52" class="regular wow fadeInRightBig" data-wow-duration="2s">Java Core, Spring Framework, Android
                 (basic), MySQL, JavaScript (basic), HTML/CSS(basic).
@@ -45,7 +292,7 @@
         <div class="smallcompanies col-md-4 ">
             <div class="w-100">
                 <a href="https://goo.gl/Ab8XXn"> <img
-                        class="w-100 wow fadeInLeftBig img1" data-wow-duration="1s" src="../static/images/(8).jpg"></a>
+                        class="w-100 wow fadeInLeftBig img1" data-wow-duration="1s" src="images/(8).jpg"/></a>
 
             </div>
             <p class="templatestxt text-center pt-3 wow fadeInLeftBig bold" data-wow-duration="1.5s">This is one of my
@@ -53,19 +300,20 @@
             <p class="templatestxt2 mb-5 text-center wow fadeInLeftBig regular" data-wow-duration="1.5s">
                 E-Shopper is an online shop.I worked on this project writing beck-and and using "Spring"
                 framework , also I used spring tools as boot,data,security,mailing and so on.
-                <br><a
-                    href="https://goo.gl/Ab8XXn" class="a bold">view
-                project</a></p>
+                <a href="https://goo.gl/Ab8XXn" class="a bold">view
+                    project
+                </a>
+            </p>
         </div>
 
 
         <div class="psdtohtml col-md-4 ">
             <a href="https://goo.gl/eESntL"> <img
-                    class="w-100 wow fadeInUpBig img1" data-wow-duration="1s" src="../static/images/(6).jpg"></a>
+                    class="w-100 wow fadeInUpBig img1" data-wow-duration="1s" src="images/(6).jpg"/></a>
             <p class="templatestxt pt-3 text-center wow fadeInUpBig  bold" data-wow-duration="1.5s">Our team work</p>
             <p class="templatestxt2 mb-5 text-center wow fadeInUpBig regular" data-wow-duration="1.5s">
-                The result of our team work is this project called "Smile-dent".<br>
-                "Smile-dent" is the idea of online-registering the patients in stomatology.<br>
+                The result of our team work is this project called "Smile-dent".<br/>
+                "Smile-dent" is the idea of online-registering the patients in stomatology.<br/>
                 <a href="https://goo.gl/eESntL"
                    class="a  bold">view project</a></p>
 
@@ -74,12 +322,12 @@
 
         <div class="lastestproject col-md-4 ">
             <a href="https://drive.google.com/open?id=1eT6D_9AII32lLJAFKvumyfaSH97kMDsI"> <img
-                    class="w-100 wow fadeInRightBig img1" data-wow-duration="1s" src="../static/images/(7).png"></a>
+                    class="w-100 wow fadeInRightBig img1" data-wow-duration="1s" src="images/(7).png"/></a>
             <p class="templatestxt pt-3 text-center wow fadeInRightBig bold" data-wow-duration="1.5s">Lastest
                 Project</p>
             <p class="templatestxt2 mb-5 text-center wow fadeInRightBig regular" data-wow-duration="1.5s">Any way you
-                look at it<br>
-                Looks Great on All Devices<br><a
+                look at it<br/>
+                Looks Great on All Devices<br/><a
                         href="https://drive.google.com/open?id=1eT6D_9AII32lLJAFKvumyfaSH97kMDsI" class="a bold">view
                     project</a></p>
 
@@ -109,7 +357,7 @@
         <div class="col-md-4">
             <div class="mypic ml-4 d-flex justify-content-center align-items-center">
 
-                <img class="w-100 wow fadeInLeftBig mypic" data-wow-duration="1s" src="../static/images/IMG.jpg">
+                <img class="w-100 wow fadeInLeftBig mypic" data-wow-duration="1s" src="images/IMG.jpg"/>
 
             </div>
             <div class="w-100  mt-5  d-flex justify-content-center align-items-center ">
@@ -118,20 +366,22 @@
             </div>
             <div class="tell wow fadeInLeftBig" data-wow-duration="1.5s">
                 <div class="w-100 d-flex justify-content-center">
-                    <hr class="w-100 ">
+                    <hr class="w-100 "/>
                 </div>
                 <div class="w-100 d-flex justify-content-center">
                     <div>
                         <h3 class=" my text-center bold">My Contacts</h3>
                         <div class="w-100 d-flex justify-content-center ">
-                            <hr class="w-25 ">
+                            <hr class="w-25 "/>
                         </div>
                         <ul class="contackts">
-                            <li class=" d-flex bold align-items-center"><img src="../static/images/viber.png"> &#160
-                                &#160 +(374) 98-14-94-90
+                            <li class=" d-flex bold align-items-center">
+                                <img src="images/viber.png"/>
+                                <h4> (+374) 98 14 94 90</h4>
                             </li>
-                            <li class=" d-flex bold mt-3 align-items-center"><img src="../static/images/mail.png">
-                                &#160&#160 gevorgyan604@gmail.com
+                            <li class=" d-flex bold mt-3 align-items-center">
+                                <img src="images/mail.png"/>
+                                <h4> gevorgyan604@gmail.com</h4>
                             </li>
                         </ul>
                     </div>
@@ -143,17 +393,17 @@
         <div class="cv wow fadeInRightBig col-md-7" data-wow-duration="1s">
             <div class="w-100 cvname "><a class="  font-weight-bold">Gor Gevorgyan:</a>back end
                 developer and front end(basic)
-                From Armenia in Gyumri:<br>
+                From Armenia in Gyumri:<br/>
                 <a class=" font-weight-bold ">Education:</a>
                 <a class="education" href="http://www.asuegb.am/">NATIONAL POLYTECHNIC UNIVERSITY OF ARMENIA GYUMRI
                     BRANCH(2012-2016),</a>
-                Profession information technology:<br>
+                Profession information technology:<br/>
                 <a class="education" href="https://www.facebook.com/wedoappsLLC/">WeDoApps programming (2017 -
-                    2018):</a>Mobile Android developer: <br>
+                    2018):</a>Mobile Android developer: <br/>
                 <a class="education" href="https://www.facebook.com/MICArmenia/">GITC Microsoft Innovation Center
-                    Armenia (2017 -current):</a>Back end developer(JAVA):<br>
+                    Armenia (2017 -current):</a>Back end developer(JAVA):<br/>
                 <a class="education" href="https://www.facebook.com/MICArmenia/">Gyumri Information Technologies Center
-                    Armenia (2015 sep - 2016 jul):</a>Back end developer(JAVA):<br>
+                    Armenia (2015 sep - 2016 jul):</a>Back end developer(JAVA):<br/>
                 Solid background and advanced knowledge in computer development software including
                 JAVA,MYSQL,HTML,CSS,BOOTSTRAP,JS.Skilled in working with database management
                 tools such as MySQL. Highly organized with exceptional commitment to task completion
@@ -161,38 +411,38 @@
                 Committed to delivering company objectives to projects and results to customers and
                 improving each version of software I engage with.Ability to solve complex problems
                 successfully with minimal guidance or help using a logical reasoning technique and a
-                strong attention to detail.<br>
-                <a class='font-weight-bold'>Personal skills and competences:</a><br>
-                <a class='font-weight-bold'>Experience:</a><br>
-                WeDoApps- Dec 2015- Mar 2016-Android intern Ananiks:<br>
-                April 2016- July 2016 - Java intern:<br>
-                WeDoApps- Nov 2017- Mar 2018-Java intern, JavaScript intern, JS React Native inter<br>
+                strong attention to detail.<br/>
+                <a class='font-weight-bold'>Personal skills and competences:</a><br/>
+                <a class='font-weight-bold'>Experience:</a><br/>
+                WeDoApps- Dec 2015- Mar 2016-Android intern Ananiks:<br/>
+                April 2016- July 2016 - Java intern:<br/>
+                WeDoApps- Nov 2017- Mar 2018-Java intern, JavaScript intern, JS React Native inter<br/>
                 A volunteer team member in Narek Charity center <h4 class="cvtxt regular"></h4>
-                <a class='font-weight-bold'>Language:</a><br>
+                <a class='font-weight-bold'>Language:</a><br/>
                 Mother tongue Armenian, Russian(excellent), English(middle)
-                </div>
+            </div>
             <div class="w-100 d-flex justify-content-center flex-column">
-                <hr class="w-100 ">
+                <hr class="w-100 "/>
                 <h3 class="my mt-3 bold text-center">I'm In Websites</h3>
             </div>
             <div class="w-100 d-flex justify-content-center ">
-                <hr class="w-25 ">
+                <hr class="w-25 "/>
 
             </div>
 
             <div class="mycontackts mt-2 w-100 wow fadeInRightBig  d-flex flex-wrap justify-content-center"
                  data-wow-duration="1.5s">
                 <a href="https://goo.gl/zaKsk3">
-                    <div class="icon  mb-5 rounded-circle"><img class="m-2" src="../static/images/fb.png"></div>
+                    <div class="icon  mb-5 rounded-circle"><img class="m-2" src="images/fb.png"/></div>
                 </a>
                 <a href="https://goo.gl/SSeQfa">
-                    <div class="icon ml-4 mb-5 rounded-circle"><img class="m-2" src="../static/images/g+.png"></div>
+                    <div class="icon ml-4 mb-5 rounded-circle"><img class="m-2" src="images/g+.png"/></div>
                 </a>
                 <a href="https://goo.gl/EaoFVV">
-                    <div class="icon ml-4 mb-5 rounded-circle"><img class="m-2" src="../static/images/git.png"></div>
+                    <div class="icon ml-4 mb-5 rounded-circle"><img class="m-2" src="images/git.png"/></div>
                 </a>
                 <a href="https://goo.gl/96QPbn">
-                    <div class="icon ml-4 mb-5 rounded-circle"><img class="m-2" src="../static/images/instagram.png">
+                    <div class="icon ml-4 mb-5 rounded-circle"><img class="m-2" src="images/instagram.png"/>
                     </div>
                 </a>
 
@@ -210,7 +460,7 @@
         </div>
     </div>
 </div>
-<script src="../static/wow-animation/wow.min.js"></script>
+<script src="wow-animation/wow.min.js"></script>
 <script>
     new WOW().init();
 </script>

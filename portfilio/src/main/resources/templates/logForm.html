@@ -1,32 +1,31 @@
-<!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../static/css/stylereglog.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link href="../static/css/stylereglog.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <title>LOGIN</title>
 </head>
 <body style="background-color: #3d3d3d">
-<img style="width: 100%; height:100vh; position: absolute" src="../static/images/background_image.jpg">
+<img style="width: 100%; height:100vh; position: absolute" src="images/background_image.jpg"/>
 <div class="body  p-3" style="position: relative">
     <div style="width: 30%" class="pl-5 pr-5 pb-5 pt-2 border rounded border-light  ">
         <h1 style="color: whitesmoke" class="font-weight-light">LOGIN</h1>
-        <form  action="/loginServlet" method="post" name="loginServlet" >
+        <form  action="#" th:action="@{/}" th:method="post" name="loginServlet" >
             <div class="form-group">
                 <input style="background-color: rgba(61,61,61,0.11);color: whitesmoke" type="text" name="username"
                        class="form-control border border-light" id="exampleInputEmail1" aria-describedby="emailHelp"
-                       placeholder="Enter email">
+                       placeholder="Enter email"/>
             </div>
             <br>
             <div class="form-group">
                 <input style="background-color: rgba(61,61,61,0.11);color: whitesmoke" type="password" name="password"
-                       class="form-control border border-light" id="exampleInputPassword1" placeholder="Password">
+                       class="form-control border border-light" id="exampleInputPassword1" placeholder="Password"/>
             </div>
             <br>
             <div class="d">
