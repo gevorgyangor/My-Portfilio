@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <link rel="icon" href="images/g.jpg" type="image/gif"/>
     <link rel="stylesheet" type="text/css" href="wow-animation/animate.min.css"/>
-    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <title>Gor Gevorgyan's portfolio </title>
     <style>
         * {
@@ -258,15 +258,17 @@
 </head>
 <body>
 <div class="d-flex  flex-row-reverse bg-secondary">
-    <button th:type="submit" action="@{/login}" method="get" class="btn regular btn-primary mr-4 mt-2 mb-2" id="pwd" name="login" >
-        LOGIN
-    </button>
-
-    <button th:type="submit" action="@{/register}" method="post" class="btn regular btn-primary mr-4 mt-2 mb-2"
-            id="email"
-            name="register" >REGISTER
-    </button>
-
+    <form th:action="@{/login}" th:method="get">
+        <input th:type="submit" class="btn regular btn-primary mr-4 mt-2 mb-2"
+               id="pwd" value="LOGIN">
+        </input>
+    </form>
+    <form th:action="@{/register}" th:method="post">
+        <input th:type="submit" class="btn regular btn-primary mr-4 mt-2 mb-2"
+               id="email"
+               value="REGISTER">
+        </input>
+    </form>
 </div>
 <div class=" header position-relative w-100">
     <div class="headerfilter position-absolute w-100 d-flex align-items-center">

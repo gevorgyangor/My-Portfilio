@@ -35,13 +35,22 @@ public class MainController {
         return "logForm";
     }
 
-    @PostMapping(value = "/loginUser")
+    @PostMapping("/addUser")
+    public String addUser(@ModelAttribute("user") User user) {
+        if (user.getType() == null) {
+            user.setType(UserType.USER);
+        }
+        userRepository.save(user);
+        return "index";
+    }
+
+    @GetMapping("/loginUser")
     public String loginUser(@AuthenticationPrincipal UserDetails userDetails) {
         User user = ((CurrentUser) userDetails).getUser();
         if (user.getType() == UserType.USER) {
-            return "redirect:/";
+            return "index";
         }
-        return "redirect:/admin";
+        return "regForm";
     }
 
     @GetMapping(value = "/admin")

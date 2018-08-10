@@ -22,10 +22,12 @@ public class User {
     private String surname;
     @Column
     private String email;
+    @Column(name = "phone_number")
+    private String phoneNumber;
     @Column
     private String password;
-    @Column
-    private String phoneNumber;
+    @Column(name = "repeat_password")
+    private String repeatPassword;
     @Column
     private UserType type;
 }
