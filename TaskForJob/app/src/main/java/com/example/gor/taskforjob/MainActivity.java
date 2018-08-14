@@ -1,3 +1,4 @@
+package com.example.gor.taskforjob;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -77,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                     call.enqueue(new Callback<ContactList>() {
                         @Override
                         public void onResponse(Call<ContactList> call, Response<ContactList> response) {
-                            //Dismiss Dialog
                             dialog.dismiss();
 
                             if (response.isSuccessful()) {
